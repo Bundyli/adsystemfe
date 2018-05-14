@@ -4,29 +4,33 @@
             <h2 class="tousu-reason">请选择投诉该网页的原因:</h2>
         </div>
         <ul class="tousu-list">
-            <li><a href="#">网页包含欺诈信息</a><i class="icon-keyboard_arrow_right"></i></li>
-            <li><a href="#">网页包含色情信息</a><i class="icon-keyboard_arrow_right"></i></li>
-            <li><a href="#">网页包含诱导行为</a><i class="icon-keyboard_arrow_right"></i></li>
-            <li><a href="#">网页包含不实信息</a><i class="icon-keyboard_arrow_right"></i></li>
-            <li><a href="#">网页包含违法犯罪</a><i class="icon-keyboard_arrow_right"></i></li>
-            <li><a href="#">网页包含骚扰信息</a><i class="icon-keyboard_arrow_right"></i></li>
-            <li><a href="#">违规声明原创</a><i class="icon-keyboard_arrow_right"></i></li>
-            <li><a href="#">未经授权的文章内容</a><i class="icon-keyboard_arrow_right"></i></li>
+            <li @click="jumptosb()"><a href="#" >网页包含欺诈信息</a><img src="../assets/images/right.png" alt=""></li>
+            <li @click="jumptosb()"><a href="#" >网页包含色情信息</a><img src="../assets/images/right.png" alt=""></li>
+            <li @click="jumptosb()"><a href="#" >网页包含诱导行为</a><img src="../assets/images/right.png" alt=""></li>
+            <li @click="jumptosb()"><a href="#" >网页包含不实信息</a><img src="../assets/images/right.png" alt=""></li>
+            <li @click="jumptosb()"><a href="#" >网页包含违法犯罪</a><img src="../assets/images/right.png" alt=""></li>
+            <li @click="jumptosb()"><a href="#" >网页包含骚扰信息</a><img src="../assets/images/right.png" alt=""></li>
+            <li @click="jumptosb()"><a href="#" >违规声明原创</a><img src="../assets/images/right.png" alt=""></li>
+            <li @click="jumptosb()"><a href="#" >未经授权的文章内容</a><img src="../assets/images/right.png" alt=""></li>
         </ul>
         <div class="line"></div>
-        <div class="other"><a href="tijiao3.html">其他</a></div> 
+        <div class="other"><a href="#" @click="jumptosb()">其他</a></div> 
     </div>
 </template>
 
 <script>
 export default {
-
+    methods:{
+        jumptosb:function(){
+            this.$router.push("/tssb");
+        }
+    }
 }
 </script>
 <style lang="less" scoped>
 .tousu-container {
     margin: 0 auto;
-    margin-top: -50px;
+    // margin-top: -50px;
     .tousu-title {
         width: 100%;
         border-bottom: 1px solid #ccc;
@@ -56,9 +60,10 @@ export default {
                 font-size: 16px;
                 color: #333;
             }
-            .icon-keyboard_arrow_right {
-                font-size: 16px;
-                padding: 10px 0;
+            img {
+                float: right;
+                height: 4vw;
+                margin: 1vw 5px 0 0;
             }
             
         }

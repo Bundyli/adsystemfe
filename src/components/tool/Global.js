@@ -14,6 +14,7 @@ module.exports = {
     // websocketbaseurl:'ws://192.168.30.136:8080',
 
     adsystemcmsurl:'http://ad.goldrock.cn',
+    wechatcheckurl:'http://http://kit.kindling.top',
     versioncode:'V0.3.9',
 
 };  

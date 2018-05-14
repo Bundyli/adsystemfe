@@ -64,6 +64,8 @@ import {
 
                     }else if(response.data.message){
                       alert(response.data.message);
+                    }else if(response.data.status == 'ok'){
+                      resolve(response.data);
                     }
                   } 
                 })
