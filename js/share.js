@@ -19,7 +19,7 @@ $(function(){
         success:function(data){
             data = data[0];
             wx.config({
-                debug:true,
+                debug:false,
                 appId:data.appId,
                 timestamp:parseInt(data.timestamp),
                 nonceStr:data.nonceStr,
