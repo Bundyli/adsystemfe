@@ -1,0 +1,38 @@
+.share-container {
+    /* width: 355px;
+    height: 245px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative; */
+    width: 100%;
+    height: 667px;
+    /* background-color: rgba(0, 0, 0, 0.6); */
+    background-color: black;
+}
+.share-container img {
+    width: 100%;
+    
+}
+.share-container .pop {
+    position: absolute;
+    top:50px;
+    left:40px;
+    width: 270px;
+    height: 150px;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    background-color:rgba(255, 255, 255, 0.9);
+}
+.share-container .pop p {
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+    height: 50%;
+    text-align: center;
+    line-height: 75px;
+}
+.share-container .pop div {
+    font-size: 22px;
+    line-height: 75px;
+    text-align: center;
+    height: 50%;
+}

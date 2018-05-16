@@ -1,0 +1,54 @@
+.tousu-container {
+    margin: 0 auto;
+}
+.tousu-container .tousu-title {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+.tousu-container .tousu-title h2 {
+    font-size: 14px;
+    color: #3c3c3c;
+    font-weight: 200;
+    text-align: left; 
+    margin-left: 20px;
+    padding: 10px 0;
+}
+.tousu-container .tousu-list {
+    width: 335px;
+    margin: 0 auto;
+}
+.tousu-container .tousu-list li {
+    width:100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+    color: #333;
+    text-align: left;
+}
+.tousu-container .tousu-list li:last-child {
+    border: none;
+}
+.tousu-container .tousu-list li a {
+    font-size: 16px;
+    color: #333;
+}
+.tousu-container .tousu-list li img {
+    float: right;
+    height: 4vw;
+    margin: 1vw 5px 0 0;
+}
+.tousu-container .line {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+}
+.tousu-container .other {
+    width: 335px;
+    margin: 0 auto;
+    padding-top: 10px;
+    text-align: left;
+}
+.tousu-container .other a {
+    font-size: 16px;
+    color: #333;
+}

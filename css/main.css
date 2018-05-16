@@ -1,0 +1,115 @@
+#content {
+    width: 100%;
+    margin: 20px auto;
+}
+#content .top {
+    width: 92%;
+    margin: 0 auto;
+}
+#content .top-title {
+    font-size: 22px; 
+    margin-left: 50px;
+}
+#content .top-list {
+    text-align: left;
+    margin-top: 20px;
+}
+#content .top-list .top-user {
+    font-size: 14px;
+}
+#content .top-list .top-date {
+ margin-left: 10px;
+    font-size: 14px;
+}
+#content .top-yd {
+    text-align: left;
+    margin-top: 20px;
+}
+#content .top-yd .top-ck {
+    font-size: 14px;
+}
+#content .top-yd .shuxian {
+    font-size: 14px;
+    margin: 0 10px;
+}
+#content .top-yd .top-xyd {
+    font-size: 14px;
+}
+#content .ad-title {
+    width: 92%;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+#content .ad-title .with-line {
+    width: 100%;
+    border-top: 1px dotted #e1e1e1;
+    text-align: center;
+}
+#content .ad-title .with-line .tips {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #fff;
+    margin-top: -10px;
+}
+#content .ad {
+    margin: 20px auto;
+    width: 92%;
+    height: 100px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+#content .ad:last-child {
+    margin-top: 12px;
+}
+#content .ad a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+#content .ad a img {
+    width: 100%;
+    height: 100%;
+}
+#content .video-title {
+    width: 92%;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 16px;
+}
+#content .video-tx {
+    margin: 20px auto;
+    width: 92%;
+    height: 225px;
+    background-color:black;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    overflow: hidden;
+}
+#content .video-tx iframe {
+    width: 100%;
+    height: 100%;
+}
+#content .toobar {
+    margin: 20px auto;
+    width: 92%;
+}
+#content .toobar ul {
+    width: 100%;
+}
+#content .toobar ul li {
+    float: left;
+    font-size: 14px;
+}
+#content .toobar ul .toobar-reador {
+    margin-right: 40px;
+}
+#content .toobar ul .toobar-like {
+    margin-right: 30px;
+}
+#content .toobar ul .toobar-like .icon-favorite {
+    color:tomato;
+    margin-right: 3px;
+}
+#content .toobar ul .toobar-tousu {
+    margin-left: 40px;
+}

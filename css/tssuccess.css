@@ -1,0 +1,43 @@
+.tssc-container {
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+}
+.tssc-container .tssc-done {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+.tssc-container .tssc-done img {
+    width: 100%;
+    height: 100%;
+}
+.tssc-container .tssc-sb {
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+}
+.tssc-container .tssc-sb span {
+    font-size: 16px;
+}
+.tssc-container .tssc-p {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+}
+.tssc-container .tssc-p p {
+        font-size: 14px;
+        margin-bottom: 10px;
+}
+.tssc-container .tssc-btn {
+      display: inline-block;
+      width: 250px;
+      height: 50px;
+      background-color: #1fb922;
+      border-radius: 5px;
+      margin-top: 10px;
+      font-size: 18px;
+      text-align: center;
+      line-height: 50px; 
+      /* margin-right: 20px; */
+}

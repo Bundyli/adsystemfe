@@ -1,0 +1,17 @@
+body{
+    color:#323232;
+    background-color:#fff;
+}
+input{
+    box-shadow:none;
+    line-height:normal;
+}
+.clearfix::before, .clearfix::after{
+        display: table;
+        width:100%;
+        height:0;
+        content:"";
+        font-size:0;
+        clear:both;
+    
+}
