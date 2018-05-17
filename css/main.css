@@ -1,18 +1,18 @@
 #content {
     width: 100%;
-    margin: 20px auto;
+    /*margin: 20px auto;*/
 }
 #content .top {
     width: 92%;
-    margin: 0 auto;
+    margin: 4vh auto;
+    text-align: center;
 }
 #content .top-title {
-    font-size: 22px; 
-    margin-left: 50px;
+    font-size: 6vw; 
 }
 #content .top-list {
     text-align: left;
-    margin-top: 20px;
+    margin-top: 2vh;
 }
 #content .top-list .top-user {
     font-size: 16px;

@@ -2,7 +2,7 @@ $(function(){
     var status = 'pending';
 
     var domain = location.origin;
-    console.log(domain);
+    // console.log(domain);
 
     var safeurl = location.search;
     var backstatus = getRequest().status;
@@ -36,6 +36,7 @@ $(function(){
                 ad1_link = testHttp(ad1_link);
                 var ad1_pic = cmsurl+rgex(obj["field_top_ad_export"]["ad_pic"]);
                 var ad2_link = rgex(obj["field_bottom_ad_export"]["ad_link"]);
+                ad2_link = testHttp(ad2_link);
                 var ad2_pic = cmsurl+rgex(obj["field_bottom_ad_export"]["ad_pic"]);
                 var field_video_vid = obj["field_video_vid"];
                 var field_share_pic = obj["field_share_pic"];
