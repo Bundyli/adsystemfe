@@ -15,3 +15,8 @@ input{
         clear:both;
     
 }
+
+a {
+    color: #607fa6;
+    text-decoration: none
+}

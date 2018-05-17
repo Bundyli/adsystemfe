@@ -46,6 +46,7 @@ function formatDate(timestamp, format, default_value) {
           theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
        }   
     }
+    // console.log(theRequest);
     return theRequest;   
  } 
 
@@ -55,8 +56,8 @@ function formatDate(timestamp, format, default_value) {
  }
 
  function getHost(url){
-  var reg = /(http(s)?:\/\/.+?)\/(.+)/gi;
-  var res = reg.exec(url);
-  var savehost = res&&res[1]?res[1]:url;
-  return savehost;
+    var reg = /(http(s)?:\/\/.+?)\/(.+)/gi;
+    var res = reg.exec(url);
+    var savehost = res&&res[1]?res[1]:url;
+    return savehost;
 }  

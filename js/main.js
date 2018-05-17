@@ -1,5 +1,9 @@
 $(function(){
     var status = 'pending';
+
+    var domain = location.origin;
+    console.log(domain);
+
     var safeurl = location.search;
     var backstatus = getRequest().status;
     if(backstatus){
@@ -7,10 +11,15 @@ $(function(){
     } 
     var id = getRequest().id;
     var safeurl = getRequest().url;
-    var reg = /(http(s)?:\/\/.+?)\/(.+)/gi;
-    var res = reg.exec(safeurl);
-    var safehost = res&&res[1]?res[1]:safeurl;
+    var safehost = getHost(safeurl);
+
     var cmsurl = "http://cms.adsys.goldrock.cn";
+    var date = new Date();
+    date = formatDate(date,'yyyy-MM-dd');
+
+    $('.tousu').on('click',function(){
+       window.location.href= safehost+'/tousu.html?safeurl='+safeurl+'&id='+id+'&domain='+domain; 
+    });
 
     $.ajax({
         type: 'GET',
@@ -19,7 +28,8 @@ $(function(){
             if(data&&data.length!=0){
                 var obj = data[0];
                 var toptitle = obj.title;
-                var topdate = obj.created;
+                // var topdate = obj.created;
+                var topdate = date;
                 var field_readlink = obj["field_readlink"];
                 field_readlink = testHttp(field_readlink);
                 var ad1_link = rgex(obj["field_top_ad_export"]["ad_link"]);
@@ -75,6 +85,21 @@ $(function(){
             }
         },1000);
     }
+
+
+    $('.toobar-like').on('click',function(){
+        var $color = $('.icon-favorite').css('color');
+        var $likenum =parseInt($('#likenum').html());
+        if($color == 'rgb(255, 99, 71)'){
+            $('.icon-favorite').css('color','#ccc');
+            $likenum -=1;
+            $('#likenum').html($likenum);
+        }else if($color == 'rgb(204, 204, 204)'){
+            $('.icon-favorite').css('color','rgb(255, 99, 71)');
+            $likenum +=1;
+            $('#likenum').html($likenum);
+        }
+    });
 
         
 });

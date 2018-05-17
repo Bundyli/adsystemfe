@@ -15,11 +15,11 @@
     margin-top: 20px;
 }
 #content .top-list .top-user {
-    font-size: 14px;
+    font-size: 16px;
+    margin-left: 10px;
 }
 #content .top-list .top-date {
- margin-left: 10px;
-    font-size: 14px;
+    font-size: 16px;
 }
 #content .top-yd {
     text-align: left;
@@ -98,18 +98,19 @@
 }
 #content .toobar ul li {
     float: left;
-    font-size: 14px;
+    font-size: 16px;
 }
 #content .toobar ul .toobar-reador {
-    margin-right: 40px;
+    margin-right: 30px;
 }
 #content .toobar ul .toobar-like {
     margin-right: 30px;
 }
 #content .toobar ul .toobar-like .icon-favorite {
-    color:tomato;
+    color: #ccc;
     margin-right: 3px;
 }
 #content .toobar ul .toobar-tousu {
-    margin-left: 40px;
+    /*margin-left: 50px;*/
+    float: right;
 }

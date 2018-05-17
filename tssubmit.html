@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>投诉提交页面</title>
     <link rel="stylesheet" href="./css/reset.css">
@@ -11,16 +11,18 @@
 </head>
 <body>
     <div class="tssb-container">
+        <div> <span>你可以：</span></div>
         <ul>
-          <li><span>您可以：</span></li>
-          <li id="sub_sh"><a href="http://wx.goldrock.cn/tssuccess.html">提交给我们审核</a>  <img src="./common/images/right.png" alt=""></li>
+          <li id="sub_sh"><a href="#">提交给我们审核</a>  <img src="./common/images/right.png" alt=""></li>
         </ul>
         <!-- <p>感谢您的意见，我们会努力改善</p>
         <p>投诉内容：</p>
         <p class="tssb-content">我们的测试</p>
         <a href="#" @click="jumptosc" class="tssb-sb">提交</a> -->
+        <a class="footer" href="https://weixin110.qq.com/security/readtemplate?t=w_security_center_website/report_agreement&amp;lang=zh_CN">投诉须知</a>
     </div>
     <script src="./common/zepto.min.js"></script>
+    <script src="./js/common.js"></script>
     <script src="./js/tssubmit.js"></script>
 </body>
 </html>

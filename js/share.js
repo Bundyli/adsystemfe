@@ -10,6 +10,7 @@ $(function(){
 
     var title = decodeURI(getRequest().title);
     var pic_url=decodeURI(cmsurl + getRequest().pic_url);
+  
     var share_desc = decodeURI(getRequest().share_desc);
    
     $.ajax({
@@ -19,7 +20,7 @@ $(function(){
         success:function(data){
             data = data[0];
             wx.config({
-                debug:false,
+                debug:true,
                 appId:data.appId,
                 timestamp:parseInt(data.timestamp),
                 nonceStr:data.nonceStr,
