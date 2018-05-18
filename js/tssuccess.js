@@ -28,8 +28,8 @@ $(function(){
                   wx.closeWindow();	
             });
         },
-        error:function(xhr,type){
-            console.log('ajax err');
+        error:function(xhr,type,err){
+            alert(err);
         }
     });
     });

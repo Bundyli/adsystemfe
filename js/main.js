@@ -3,11 +3,12 @@ $(function(){
     var status = 'pending';
     var domain = location.origin;
 
-    var safeurl = location.search;
+    var rnum = parseInt(Math.random()*100000);
     var backstatus = getRequest().status;
-    if(backstatus){
-        status = backstatus;
-    } 
+    var rrnum = getRequest().rrnum;
+    var sharetime = 1;
+    var limitvtime = 5;
+    
     var id = getRequest().id;
     var safeurl = getRequest().url;
     var safehost = getHost(safeurl);
@@ -16,10 +17,8 @@ $(function(){
     var date = new Date();
     date = formatDate(date,'yyyy-MM-dd');
 
-    var rnum = parseInt(Math.random()*100000);
-    $('.likenum').html(rnum);
-
     $('.tousu').on('click',function(){
+        alert(safehost);
        window.location.href= safehost+'/tousu.html?safeurl='+safeurl+'&id='+id+'&domain='+domain; 
     });
 
@@ -28,9 +27,10 @@ $(function(){
         url: "/adsys/restapi/video_detail/"+id+"?_format=json",
         success:function(data){
             if(data&&data.length!=0){
+                console.log(data);
                 var obj = data[0];
+
                 var toptitle = obj.title;
-                // var topdate = obj.created;
                 var topdate = date;
                 var field_readlink = obj["field_readlink"];
                 field_readlink = testHttp(field_readlink);
@@ -39,11 +39,14 @@ $(function(){
                 var ad1_pic = cmsurl+rgex(obj["field_top_ad_export"]["ad_pic"]);
                 var ad2_link = rgex(obj["field_bottom_ad_export"]["ad_link"]);
                 ad2_link = testHttp(ad2_link);
-                // console.log(ad2_link);
                 var ad2_pic = cmsurl+rgex(obj["field_bottom_ad_export"]["ad_pic"]);
                 var field_video_vid = obj["field_video_vid"];
                 var field_share_pic = obj["field_share_pic"];
                 var field_share_desc = obj["field_share_desc"];
+                var field_limit_video_time =obj["field_limit_video_time"];
+                limitvtime = field_limit_video_time -0;
+                var field_share_time = obj["field_share_time"];
+                sharetime = field_share_time -0;
 
                 $('title').html(toptitle);
                 $('.top-title').html(toptitle); 
@@ -53,15 +56,22 @@ $(function(){
                 $('.ad2_img').attr('src',ad2_pic);
                 $('.ad2_link').attr('href',ad2_link);
                 $('.readori').attr('href',field_readlink);
-                playVideo(field_video_vid,toptitle,field_share_pic,field_share_desc);
+                playVideo(field_video_vid,toptitle,field_share_pic,field_share_desc,limitvtime,sharetime);
             }
         },
-        error:function(xhr,type){
-            console.log('ajax err');
+        error:function(xhr,type,err){
+            alert(err);
         }
     });
 
-    function playVideo(vid,title,picurl,share_desc){
+    if(backstatus){
+            status = backstatus;
+            rnum = rrnum;
+    } 
+    $('.likenum').html(rnum);
+
+    function playVideo(vid,title,picurl,share_desc,limitvtime,sharetime){
+        limitvtime = limitvtime || 5;
         title=encodeURI(encodeURI(title));
         picurl=encodeURI(picurl);
         share_desc=encodeURI(encodeURI(share_desc));
@@ -81,15 +91,14 @@ $(function(){
         var currentTime = 0;
         var timmer = setInterval(function(){
             currentTime = Math.floor(player.getPlaytime());
-            if(currentTime >=8){
+            if(currentTime >= limitvtime){
                 if(status == 'pending'){
                     player.callCBEvent('pause'); 
-                    window.location.href=safehost+'/share.html?safeurl='+safeurl+'&title='+title+'&pic_url='+picurl+'&share_desc='+share_desc+'&id='+id+'&ldurl='+location.origin; 
+                    window.location.href=safehost+'/share.html?safeurl='+safeurl+'&title='+title+'&pic_url='+picurl+'&share_desc='+share_desc+'&id='+id+'&ldurl='+location.origin+'&rnum='+rnum+'&sharetime='+sharetime; 
                 }   
             }
         },1000);
     }
-
 
     $('.toobar-like').on('click',function(){
         var $color = $('.icon-favorite').css('color');

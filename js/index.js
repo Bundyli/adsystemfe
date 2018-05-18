@@ -6,14 +6,13 @@ $(function(){
         type: 'GET',
         url: '/adsys/moduleapi/domain/get_domain',
         data: { id: id },
-        success:function(data){
+        success:function(data,status,xhr){
             data = data[0];
             var domain = testHttp(data.domain);
-            console.log(domain);
             window.location.href= domain+'/main.html?url='+safehost+'&id='+id;
         },
-        error:function(xhr,type){
-            console.log('ajax err');
+        error:function(xhr,type,err){
+            alert(err);
         }
     });
 

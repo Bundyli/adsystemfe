@@ -1,8 +1,11 @@
 $(function(){
     var cmsurl = "http://cms.adsys.goldrock.cn";
     var id = getRequest().id;
-    var safeurl = getRequest().safeurl+'?id='+id;
+    var safeurl = getRequest().safeurl;
     var ldurl= getRequest().ldurl;
+    var rnum = getRequest().rnum;
+    var sharetime = getRequest().sharetime-0;
+    var count =0;
 
     var reg = /(http(s)?:\/\/.+?)\/(.+)/gi;
     var res = reg.exec(safeurl);
@@ -10,7 +13,6 @@ $(function(){
 
     var title = decodeURI(getRequest().title);
     var pic_url=decodeURI(cmsurl + getRequest().pic_url);
-  
     var share_desc = decodeURI(getRequest().share_desc);
    
     $.ajax({
@@ -31,10 +33,15 @@ $(function(){
             wx.ready(function(){
                 wx.onMenuShareTimeline({
                     title:title,
-                    link:safeurl,
+                    link:safeurl+'?id='+id,
                     imgUrl:pic_url,
                     success:function(){
-                        window.location.href= ldurl+'/main.html?status=contitue&id='+id;
+                        count+=1;
+                        alert('分享'+sharetime+'次才能继续观看哦');
+                        if(count >= sharetime){
+                              window.location.href= ldurl+'/main.html?status=contitue&id='+id+'&rrnum='+rnum+'&url='+safeurl;
+                        }
+                      
                     },
                     cancel:function(){}
                 });
@@ -46,8 +53,11 @@ $(function(){
                     type: '', // 分享类型,music、video或link，不填默认为link
                     dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
                     success: function () {
-                    // 用户确认分享后执行的回调函数
-                       window.location.href=ldurl+'/main.html?status=contitue&id='+id;
+                        count+=1;
+                        alert('分享'+sharetime+'次才能继续观看哦');
+                        if(count >= sharetime){
+                              window.location.href= ldurl+'/main.html?status=contitue&id='+id+'&rrnum='+rnum+'&url='+safeurl;
+                        }
                     },
                     cancel: function () {
                     // 用户取消分享后执行的回调函数
@@ -56,8 +66,8 @@ $(function(){
 				
             });
         },
-        error:function(xhr,type){
-            console.log('ajax err');
+        error:function(xhr,type,err){
+            alert(err);
         }
     });
     
