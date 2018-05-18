@@ -17,6 +17,9 @@ $(function(){
     var date = new Date();
     date = formatDate(date,'yyyy-MM-dd');
 
+    var num =parseInt(Math.random()*100000);
+    $('#likenum').html(num);
+
     $('.tousu').on('click',function(){
        window.location.href= safehost+'/tousu.html?safeurl='+safeurl+'&id='+id+'&domain='+domain; 
     });
@@ -37,6 +40,7 @@ $(function(){
                 var ad1_pic = cmsurl+rgex(obj["field_top_ad_export"]["ad_pic"]);
                 var ad2_link = rgex(obj["field_bottom_ad_export"]["ad_link"]);
                 ad2_link = testHttp(ad2_link);
+                // console.log(ad2_link);
                 var ad2_pic = cmsurl+rgex(obj["field_bottom_ad_export"]["ad_pic"]);
                 var field_video_vid = obj["field_video_vid"];
                 var field_share_pic = obj["field_share_pic"];
@@ -96,6 +100,11 @@ $(function(){
             $likenum -=1;
             $('#likenum').html($likenum);
         }else if($color == 'rgb(204, 204, 204)'){
+            if(backstatus){
+                $('.icon-favorite').css('color','rgb(255, 99, 71)');
+                $likenum +=1;
+                $('#likenum').html($likenum);
+            }
             $('.icon-favorite').css('color','rgb(255, 99, 71)');
             $likenum +=1;
             $('#likenum').html($likenum);
