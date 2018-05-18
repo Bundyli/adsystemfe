@@ -22,6 +22,7 @@ $(function(){
        window.location.href= safehost+'/tousu.html?safeurl='+safeurl+'&id='+id+'&domain='+domain; 
     });
 
+
     $.ajax({
         type: 'GET',
         url: "/adsys/restapi/video_detail/"+id+"?_format=json",
@@ -88,14 +89,18 @@ $(function(){
         })
         //输出播放器    
         player.write("mod_player");
+
+        var sharePage = safehost+'/share.html?safeurl='+safeurl+'&title='+title+'&pic_url='+picurl+'&share_desc='+share_desc+'&id='+id+'&ldurl='+location.origin+'&rnum='+rnum+'&sharetime='+sharetime;
+
         var currentTime = 0;
-        var timmer = setInterval(function(){
+        
+        status == 'pending' && setInterval(function(){
             currentTime = Math.floor(player.getPlaytime());
             if(currentTime >= limitvtime){
-                if(status == 'pending'){
-                    player.callCBEvent('pause'); 
-                    window.location.href=safehost+'/share.html?safeurl='+safeurl+'&title='+title+'&pic_url='+picurl+'&share_desc='+share_desc+'&id='+id+'&ldurl='+location.origin+'&rnum='+rnum+'&sharetime='+sharetime; 
-                }   
+                player.callCBEvent('pause'); 
+                // clearInterval(timer);
+                // alert(sharetime);
+                window.location.href= sharePage;
             }
         },1000);
     }

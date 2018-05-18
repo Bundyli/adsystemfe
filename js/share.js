@@ -4,7 +4,7 @@ $(function(){
     var safeurl = getRequest().safeurl;
     var ldurl= getRequest().ldurl;
     var rnum = getRequest().rnum;
-    var sharetime = getRequest().sharetime-0;
+    var sharetime = parseInt(getRequest().sharetime);
     var count =0;
 
     var reg = /(http(s)?:\/\/.+?)\/(.+)/gi;
@@ -37,11 +37,12 @@ $(function(){
                     imgUrl:pic_url,
                     success:function(){
                         count+=1;
-                        alert('分享'+sharetime+'次才能继续观看哦');
+                        var time = sharetime-count;
                         if(count >= sharetime){
-                              window.location.href= ldurl+'/main.html?status=contitue&id='+id+'&rrnum='+rnum+'&url='+safeurl;
+                          window.location.href= ldurl+'/main.html?status=contitue&id='+id+'&rrnum='+rnum+'&url='+safeurl;
+                        }else{
+                          alert('再分享'+time+'次才能继续观看哦');
                         }
-                      
                     },
                     cancel:function(){}
                 });
@@ -54,9 +55,11 @@ $(function(){
                     dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
                     success: function () {
                         count+=1;
-                        alert('分享'+sharetime+'次才能继续观看哦');
+                        var time = sharetime-count;
                         if(count >= sharetime){
-                              window.location.href= ldurl+'/main.html?status=contitue&id='+id+'&rrnum='+rnum+'&url='+safeurl;
+                          window.location.href= ldurl+'/main.html?status=contitue&id='+id+'&rrnum='+rnum+'&url='+safeurl;
+                        }else{
+                          alert('再分享'+time+'次才能继续观看哦');
                         }
                     },
                     cancel: function () {

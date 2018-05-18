@@ -48,7 +48,14 @@ function formatDate(timestamp, format, default_value) {
     }
     // console.log(theRequest);
     return theRequest;   
- } 
+ }
+
+ function getPram(name) {
+  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+  var r = window.location.search.split('?')[1].match(reg);
+  if (r != null) return unescape(r[2]);
+  return null;
+};
 
  function testHttp(url){
     var reg = /http(s)*:\/\//

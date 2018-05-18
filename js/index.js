@@ -9,7 +9,8 @@ $(function(){
         success:function(data,status,xhr){
             data = data[0];
             var domain = testHttp(data.domain);
-            window.location.href= domain+'/main.html?url='+safehost+'&id='+id;
+            // alert(domain+'/main.html?s='+new Date().getTime()+'&url='+safehost+'&id='+id);
+            window.location.href= domain+'/main.html?s='+new Date().getTime()+'&url='+safehost+'&id='+id;
         },
         error:function(xhr,type,err){
             alert(err);
