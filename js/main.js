@@ -1,4 +1,5 @@
 $(function(){
+
     var status = 'pending';
 
     var domain = location.origin;
@@ -17,8 +18,8 @@ $(function(){
     var date = new Date();
     date = formatDate(date,'yyyy-MM-dd');
 
-    var num =parseInt(Math.random()*100000);
-    $('#likenum').html(num);
+    var rnum = parseInt(Math.random()*100000);
+    $('.likenum').html(rnum);
 
     $('.tousu').on('click',function(){
        window.location.href= safehost+'/tousu.html?safeurl='+safeurl+'&id='+id+'&domain='+domain; 
@@ -94,20 +95,20 @@ $(function(){
 
     $('.toobar-like').on('click',function(){
         var $color = $('.icon-favorite').css('color');
-        var $likenum =parseInt($('#likenum').html());
+        var $likenum =parseInt($('.likenum').html());
         if($color == 'rgb(255, 99, 71)'){
             $('.icon-favorite').css('color','#ccc');
             $likenum -=1;
-            $('#likenum').html($likenum);
+            $('.likenum').html($likenum);
         }else if($color == 'rgb(204, 204, 204)'){
             if(backstatus){
                 $('.icon-favorite').css('color','rgb(255, 99, 71)');
                 $likenum +=1;
-                $('#likenum').html($likenum);
+                $('.likenum').html($likenum);
             }
             $('.icon-favorite').css('color','rgb(255, 99, 71)');
             $likenum +=1;
-            $('#likenum').html($likenum);
+            $('.likenum').html($likenum);
         }
     });
 
