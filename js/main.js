@@ -108,7 +108,7 @@ $(function(){
             } else {
                 $('.icon-favorite').css('color','rgb(255, 99, 71)');
                 $likenum +=1;
-                $('.likenum').html($likenum); 
+                $('.likenum').html($likenum);
             }
         }
     });
