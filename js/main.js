@@ -105,10 +105,11 @@ $(function(){
                 $('.icon-favorite').css('color','rgb(255, 99, 71)');
                 $likenum +=1;
                 $('.likenum').html($likenum);
+            } else {
+                $('.icon-favorite').css('color','rgb(255, 99, 71)');
+                $likenum +=1;
+                $('.likenum').html($likenum); 
             }
-            $('.icon-favorite').css('color','rgb(255, 99, 71)');
-            $likenum +=1;
-            $('.likenum').html($likenum);
         }
     });
 
