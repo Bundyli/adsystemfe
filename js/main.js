@@ -1,14 +1,11 @@
 $(function(){
 
     var status = 'pending';
-
     var domain = location.origin;
-    // console.log(domain);
 
     var safeurl = location.search;
     var backstatus = getRequest().status;
     if(backstatus){
-        $('.icon-favorite').css('color','rgb(255, 99, 71)');
         status = backstatus;
     } 
     var id = getRequest().id;
