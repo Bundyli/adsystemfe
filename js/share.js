@@ -2,6 +2,7 @@ $(function(){
     var cmsurl = "http://cms.adsys.goldrock.cn";
     var id = getRequest().id;
     var safeurl = getRequest().safeurl;
+    safeurl = safeurl+'?id='+id;
     var ldurl= getRequest().ldurl;
     var rnum = getRequest().rnum;
     var sharetime = parseInt(getRequest().sharetime);
@@ -33,7 +34,7 @@ $(function(){
             wx.ready(function(){
                 wx.onMenuShareTimeline({
                     title:title,
-                    link:safeurl+'?id='+id,
+                    link:safeurl,
                     imgUrl:pic_url,
                     success:function(){
                         count+=1;

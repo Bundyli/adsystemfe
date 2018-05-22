@@ -27,7 +27,6 @@ $(function(){
         url: "/adsys/restapi/video_detail/"+id+"?_format=json",
         success:function(data){
             if(data&&data.length!=0){
-                console.log(data);
                 var obj = data[0];
 
                 var toptitle = obj.title;
