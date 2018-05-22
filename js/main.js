@@ -18,7 +18,6 @@ $(function(){
     date = formatDate(date,'yyyy-MM-dd');
 
     $('.tousu').on('click',function(){
-        alert(safehost);
        window.location.href= safehost+'/tousu.html?safeurl='+safeurl+'&id='+id+'&domain='+domain; 
     });
 
